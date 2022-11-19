@@ -47,10 +47,7 @@ def image_to_bytes(picture):
 fake_user = {
     "pip3": {
         "username": "pip3",
-        "full_name": "John Doe",
-        "email": "johndoe@example.com",
         "hashed_password": "fakehashedpip3",
-        "disabled": False,
     },
 }
 

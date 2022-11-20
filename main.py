@@ -11,7 +11,7 @@ app = FastAPI()
 
 
 @app.get("/prime/{number}")
-async def is_prime(n):
+async def is_prime(n: int):
     if n.isnumeric():
         number = int(n)
         if number < 9223372036854775807:

@@ -11,24 +11,20 @@ app = FastAPI()
 
 
 @app.get("/prime/{number}")
-async def is_prime(n: int):
-    if n.isnumeric():
-        number = int(n)
-        if number < 9223372036854775807:
-            if number < 2:
-                return {"To nie liczba pierwsza"}
-            else:
-                if number == 2:
-                    return {"To liczba pierwsza"}
-                else:
-                    for i in range(2, number):
-                        if number % i == 0:
-                            return {"To nie liczba pierwsza"}
-                    return {"To liczba pierwsza"}
+async def is_prime(number: int):
+    if number < 9223372036854775807:
+        if number < 2:
+            return {"To nie liczba pierwsza"}
         else:
-            return {"Niepoprawna liczba"}
+            if number == 2:
+                return {"To liczba pierwsza"}
+            else:
+                for i in range(2, number):
+                    if number % i == 0:
+                        return {"To nie liczba pierwsza"}
+                return {"To liczba pierwsza"}
     else:
-        return {"Nalezy podac liczbe calkowita"}
+        return {"Za duza wartosc"}
 
 
 @app.post("/picture/invert/")
